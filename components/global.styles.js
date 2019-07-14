@@ -3,13 +3,20 @@ import React from 'react';
 export default function GlobalStyles() {
   return (
     <style global jsx>{`
-      @import url("https://fonts.googleapis.com/css?family=Montserrat:100,400,700,800,900&display=swap");
+      @import url('https://fonts.googleapis.com/css?family=Montserrat:100,400,700,800,900&display=swap');
       html {
         scroll-behavior: smooth;
       }
       body {
         margin: 0;
-        font-family: "Montserrat", sans-serif;
+        font-family: 'Montserrat', sans-serif;
+      }
+      .max-width-60 {
+        max-width: 60vw;
+      }
+      .center-block {
+        margin-left: auto;
+        margin-right: auto;
       }
       .text-center {
         text-align: center;
@@ -32,25 +39,25 @@ export default function GlobalStyles() {
       }
       .center-flex-absolute::before {
         display: block;
-        content: "";
+        content: '';
       }
       .center-flex-absolute::after {
         display: block;
-        content: "";
+        content: '';
       }
       .center-flex::before {
         display: block;
-        content: "";
+        content: '';
       }
       .center-flex::after {
         display: block;
-        content: "";
+        content: '';
       }
       .w100 {
         width: 100%;
       }
       .h100 {
-        height: 100%
+        height: 100%;
       }
       .a100 {
         width: 100%;
@@ -61,14 +68,11 @@ export default function GlobalStyles() {
       }
       .bg-dark {
         background-color: #272727;
-        color: #EBF0F1;
-      }
-      .bg-not-so-dark {
-        
+        color: #ebf0f1;
       }
       .bg-light {
-        background-color: #EBF0F1;
-        color: #2C2C2B;
+        background-color: #ebf0f1;
+        color: #2c2c2b;
       }
     `}</style>
   );
