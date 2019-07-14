@@ -2,6 +2,7 @@
 import React from 'react';
 import { withRouter } from 'next/router';
 import Parallax from 'react-css-parallax';
+import Typed from 'react-typed';
 
 import Head from '../components/Head';
 import CenteredText from '../components/CenteredFlex';
@@ -12,7 +13,7 @@ import kevinrodriguezApi from '../api/kevinrodriguezApi';
 
 const Home = ({ landing }) => {
   const featuredImage = landing.fields.featuredImage.fields;
-  const { displayName, briefing } = landing.fields;
+  const { displayName, briefing, qualities } = landing.fields;
   return (
     <>
       <Head title="Kevin Rodríguez" />
@@ -25,6 +26,18 @@ const Home = ({ landing }) => {
         <CenteredText centerContent w60 absolute>
           <h1 className="header text-center">{displayName}</h1>
           <p className="caption text-center">{briefing}</p>
+          <p className="caption text-center">
+            <Typed
+              loop
+              typeSpeed={70}
+              backSpeed={35}
+              strings={qualities}
+              backDelay={1500}
+              loopCount={0}
+              showCursor
+              cursorChar="|"
+            />
+          </p>
         </CenteredText>
       </Parallax>
       <Footer />

@@ -3,9 +3,13 @@ import React from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faMedium } from '@fortawesome/free-brands-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
-import colors from '../ui/Theme/colors';
+import {
+  getBackgroundColorForMode,
+  getTextColorForMode,
+} from '../ui/Theme/colors';
 
 const links = [
   {
@@ -23,25 +27,35 @@ const links = [
   return link;
 });
 
-const Nav = () => {
+const Nav = ({ mode = 'transparent', fixed = false }) => {
   return (
     <>
       <nav>
         <div className="links left">
           <div>
-            <Link prefetch href="/">
-              <a>Home</a>
+            <Link href="/">
+              <a>Kevin Rodríguez</a>
+            </Link>
+          </div>
+          <div>
+            <Link href="/es">
+              <a>
+                <span role="img" aria-label="Bandera de españa">
+                  🇪🇸
+                </span>
+                &nbsp;Español
+              </a>
             </Link>
           </div>
         </div>
-        <div className="links right">
+        <div className="links right-large">
           <div>
-            <Link prefetch href="/resume">
+            <Link href="/resume">
               <a>Resume</a>
             </Link>
           </div>
           <div>
-            <Link prefetch href="/blog">
+            <Link href="/blog">
               <a>Blog</a>
             </Link>
           </div>
@@ -61,14 +75,20 @@ const Nav = () => {
             </div>
           ))}
         </div>
+        <div className="links right-small">
+          <div>
+            <FontAwesomeIcon color={getTextColorForMode(mode)} icon={faBars} />
+          </div>
+        </div>
       </nav>
       <style jsx>{`
         nav {
           display: flex;
-          position: absolute;
+          position: ${fixed ? 'fixed' : 'absolute'};
           width: 100vw;
           flex-direction: row;
           z-index: 1;
+          background-color: ${getBackgroundColorForMode(mode)};
         }
         .links {
           display: flex;
@@ -78,15 +98,30 @@ const Nav = () => {
         .links.left div {
           margin: 0.8em 0.8em 0.8em 0.8em;
         }
-        .links.right {
-          width: 100%;
-          justify-content: flex-end;
+        @media only screen and (max-width: 560px) {
+          .links.right-large {
+            display: none;
+          }
         }
-        .links.right div {
+        @media only screen and (min-width: 560px) {
+          .links.right-small {
+            display: none;
+          }
+        }
+        .links.right-small {
+          margin-left: auto;
+        }
+        .links.right-small div {
+          margin: 0.8em 0.8em 0.8em 0.8em;
+        }
+        .links.right-large {
+          margin-left: auto;
+        }
+        .links.right-large div {
           margin: 0.8em 0.8em 0.8em 0.8em;
         }
         a {
-          color: ${colors.lighter};
+          color: ${getTextColorForMode(mode)};
           text-decoration: unset;
           font-size: 0.8em;
         }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import colors from '../ui/Theme/colors';
+import { colors } from '../ui/Theme/colors';
 
 export default function GlobalStyles({ children }) {
   return (
