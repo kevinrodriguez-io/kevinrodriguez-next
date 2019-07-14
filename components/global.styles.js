@@ -82,6 +82,13 @@ export default function GlobalStyles({ children }) {
           background-color: ${colors.lighter};
           color: ${colors.dark};
         }
+        .header {
+          text-transform: uppercase;
+          color: #ecf0f1;
+        }
+        .caption {
+          color: #ecf0f1;
+        }
       `}</style>
     </>
   );

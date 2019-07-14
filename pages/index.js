@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { withRouter } from 'next/router';
 import Parallax from 'react-css-parallax';
 import Typed from 'react-typed';
 
@@ -41,20 +40,11 @@ const Home = ({ landing }) => {
         </CenteredText>
       </Parallax>
       <Footer />
-      <style jsx>{`
-        .header {
-          text-transform: uppercase;
-          color: #ecf0f1;
-        }
-        .caption {
-          color: #ecf0f1;
-        }
-      `}</style>
     </>
   );
 };
 
-Home.getInitialProps = async () => {
+Home.getInitialProps = async ({ pathname, query, asPath, req, res, err }) => {
   const locale = 'en-US';
   const searchTitle = 'Kevin Rodríguez';
   const landing = await kevinrodriguezApi.getEntries({
@@ -65,4 +55,4 @@ Home.getInitialProps = async () => {
   return { landing: landing.items[0] };
 };
 
-export default withRouter(Home);
+export default Home;
