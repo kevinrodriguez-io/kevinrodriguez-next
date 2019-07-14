@@ -1,11 +1,12 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { withRouter } from 'next/router';
 import Parallax from 'react-css-parallax';
 
 import Head from '../components/Head';
-import GlobalStyles from '../components/global.styles';
 import CenteredText from '../components/CenteredFlex';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 import kevinrodriguezApi from '../api/kevinrodriguezApi';
 
@@ -26,6 +27,7 @@ const Home = ({ landing }) => {
           <p className="caption text-center">{briefing}</p>
         </CenteredText>
       </Parallax>
+      <Footer />
       <style jsx>{`
         .header {
           text-transform: uppercase;

@@ -3,4 +3,6 @@ export default {
   darker: '#262626',
   light: '#BDC3C7',
   lighter: '#EBF0F1',
+  flatRed: '#E74C3C',
+  flatRedDark: '#C0392B',
 };

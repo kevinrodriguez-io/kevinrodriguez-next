@@ -28,20 +28,37 @@ const Nav = () => {
     <>
       <nav>
         <div className="links left">
-          <Link prefetch href="/">
-            <a>Home</a>
-          </Link>
+          <div>
+            <Link prefetch href="/">
+              <a>Home</a>
+            </Link>
+          </div>
         </div>
         <div className="links right">
-          {links.map(({ key, href, label, icon }) => (
-            <Link href={href} key={key}>
-              <a>
-                {icon && (
-                  <FontAwesomeIcon style={{ marginRight: '1em' }} icon={icon} />
-                )}
-                {label}
-              </a>
+          <div>
+            <Link prefetch href="/resume">
+              <a>Resume</a>
             </Link>
+          </div>
+          <div>
+            <Link prefetch href="/blog">
+              <a>Blog</a>
+            </Link>
+          </div>
+          {links.map(({ key, href, label, icon }) => (
+            <div key={key}>
+              <Link href={href}>
+                <a>
+                  {icon && (
+                    <FontAwesomeIcon
+                      style={{ marginRight: '0.8em' }}
+                      icon={icon}
+                    />
+                  )}
+                  {label}
+                </a>
+              </Link>
+            </div>
           ))}
         </div>
       </nav>
@@ -51,24 +68,26 @@ const Nav = () => {
           position: absolute;
           width: 100vw;
           flex-direction: row;
-          justify-content: space-between;
           z-index: 1;
         }
         .links {
-          padding-top: 1em;
-          padding-bottom: 1em;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
         }
-        .links.left {
-          padding-left: 1em;
+        .links.left div {
+          margin: 0.8em 0.8em 0.8em 0.8em;
         }
         .links.right {
-          padding-right: 1em;
+          width: 100%;
+          justify-content: flex-end;
+        }
+        .links.right div {
+          margin: 0.8em 0.8em 0.8em 0.8em;
         }
         a {
           color: ${colors.lighter};
           text-decoration: unset;
-          margin-left: 1em;
-          margin-right: 1em;
           font-size: 0.8em;
         }
       `}</style>
