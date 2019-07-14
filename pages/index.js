@@ -14,7 +14,6 @@ const Home = ({ landing }) => {
   const { displayName, briefing } = landing.fields;
   return (
     <>
-      <GlobalStyles />
       <Head title="Kevin Rodríguez" />
       <Nav />
       <Parallax
