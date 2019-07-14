@@ -1,5 +1,7 @@
 import React from 'react';
 
+import colors from '../ui/Theme/colors';
+
 export default function GlobalStyles() {
   return (
     <style global jsx>{`
@@ -34,6 +36,10 @@ export default function GlobalStyles() {
       .justify {
         justify-content: space-evenly;
       }
+      .flex-space-between {
+        display: flex;
+        justify-content: space-between;
+      }
       .center-flex-absolute {
         position: absolute;
       }
@@ -67,12 +73,12 @@ export default function GlobalStyles() {
         padding: 1em 1em 1em 1em;
       }
       .bg-dark {
-        background-color: #272727;
-        color: #ebf0f1;
+        background-color: ${colors.darker};
+        color: ${colors.lighter};
       }
       .bg-light {
-        background-color: #ebf0f1;
-        color: #2c2c2b;
+        background-color: ${colors.lighter};
+        color: ${colors.dark};
       }
     `}</style>
   );
