@@ -2,9 +2,9 @@
   "name": "create-next-example-app",
   "license": "Privative",
   "scripts": {
-    "dev": "next",
+    "dev": "node index.js",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node index.js"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.2.0",
@@ -16,7 +16,9 @@
     "@zeit/next-css": "^1.0.1",
     "axios": "^0.19.0",
     "contentful": "^7.8.1",
+    "express": "^4.17.1",
     "next": "^8.1.0",
+    "next-i18next": "^0.46.0",
     "react": "^16.8.6",
     "react-css-parallax": "^1.0.0",
     "react-dom": "^16.8.6",

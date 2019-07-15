@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { withTranslation } from '../i18n';
 
 import {
   colors,
@@ -8,12 +9,13 @@ import {
   getTextColorForMode,
 } from '../ui/Theme/colors';
 
-const Footer = ({ mode = 'transparent', fixed = false }) => {
+const Footer = ({ mode = 'transparent', fixed = false, t }) => {
   return (
     <>
       <footer>
         <span>
-          Made with <FontAwesomeIcon color={colors.flatRed} icon={faHeart} /> by
+          {t('madeWith')}{' '}
+          <FontAwesomeIcon color={colors.flatRed} icon={faHeart} /> {t('by')}{' '}
           kevinrodriguez.io
         </span>
       </footer>
@@ -26,7 +28,7 @@ const Footer = ({ mode = 'transparent', fixed = false }) => {
           position: ${fixed ? 'fixed' : 'absolute'};
           z-index: 1;
           bottom: 0;
-          width: 100vw;
+          width: 100%;
           padding-top: 0.8em;
           padding-bottom: 0.8em;
         }
@@ -35,4 +37,4 @@ const Footer = ({ mode = 'transparent', fixed = false }) => {
   );
 };
 
-export default Footer;
+export default withTranslation('footer')(Footer);

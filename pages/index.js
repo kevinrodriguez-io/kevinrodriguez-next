@@ -10,6 +10,12 @@ import Footer from '../components/Footer';
 
 import kevinrodriguezApi from '../api/kevinrodriguezApi';
 
+import { withTranslation, i18n } from '../i18n';
+import {
+  getLocaleFromCurrentLanguage,
+  getCurrentLanguage,
+} from '../lib/locale';
+
 const Home = ({ landing }) => {
   const featuredImage = landing.fields.featuredImage.fields;
   const { displayName, briefing, qualities } = landing.fields;
@@ -45,14 +51,18 @@ const Home = ({ landing }) => {
 };
 
 Home.getInitialProps = async ({ pathname, query, asPath, req, res, err }) => {
-  const locale = 'en-US';
+  const currentLanguage = getCurrentLanguage(req, i18n);
+  const locale = getLocaleFromCurrentLanguage(currentLanguage);
   const searchTitle = 'Kevin Rodríguez';
   const landing = await kevinrodriguezApi.getEntries({
     content_type: 'landing',
     'fields.displayName': searchTitle,
     locale,
   });
-  return { landing: landing.items[0] };
+  return {
+    landing: landing.items[0],
+    namespacesRequired: ['common'],
+  };
 };
 
-export default Home;
+export default withTranslation('common')(Home);
