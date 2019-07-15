@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import Link from 'next/link';
+import { Link, Router, i18n, withTranslation } from '../i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faMedium } from '@fortawesome/free-brands-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -27,7 +27,13 @@ const links = [
   return link;
 });
 
-const Nav = ({ mode = 'transparent', fixed = false }) => {
+const Nav = ({ mode = 'transparent', fixed = false, t }) => {
+  const handleLangSwitch = async e => {
+    e.preventDefault();
+    await i18n.changeLanguage(i18n.language === 'en' ? 'es' : 'en');
+    const { pathname, query } = Router;
+    Router.push({ pathname, query }, Router.asPath);
+  };
   return (
     <>
       <nav>
@@ -38,25 +44,36 @@ const Nav = ({ mode = 'transparent', fixed = false }) => {
             </Link>
           </div>
           <div>
-            <Link href="/es">
-              <a>
-                <span role="img" aria-label="Bandera de españa">
-                  🇪🇸
-                </span>
-                &nbsp;Español
-              </a>
-            </Link>
+            <form onSubmit={handleLangSwitch}>
+              <button type="submit">
+                {i18n.language === 'en' ? (
+                  <span>
+                    <span role="img" aria-label="Bandera de españa">
+                      🇪🇸
+                    </span>
+                    <span>&nbsp;Español</span>
+                  </span>
+                ) : (
+                  <span>
+                    <span role="img" aria-label="US Flag">
+                      🇺🇸
+                    </span>
+                    <span>&nbsp;English</span>
+                  </span>
+                )}
+              </button>
+            </form>
           </div>
         </div>
         <div className="links right-large">
           <div>
             <Link href="/resume">
-              <a>Resume</a>
+              <a>{t('resume')}</a>
             </Link>
           </div>
           <div>
             <Link href="/blog">
-              <a>Blog</a>
+              <a>{t('blog')}</a>
             </Link>
           </div>
           {links.map(({ key, href, label, icon }) => (
@@ -85,7 +102,7 @@ const Nav = ({ mode = 'transparent', fixed = false }) => {
         nav {
           display: flex;
           position: ${fixed ? 'fixed' : 'absolute'};
-          width: 100vw;
+          width: 100%;
           flex-direction: row;
           z-index: 1;
           background-color: ${getBackgroundColorForMode(mode)};
@@ -107,6 +124,15 @@ const Nav = ({ mode = 'transparent', fixed = false }) => {
           .links.right-small {
             display: none;
           }
+        }
+        button {
+          background: none;
+          color: ${getTextColorForMode(mode)};
+          border: none;
+          padding: 0 !important;
+          font: inherit;
+          cursor: pointer;
+          font-size: 0.8em;
         }
         .links.right-small {
           margin-left: auto;
@@ -130,4 +156,4 @@ const Nav = ({ mode = 'transparent', fixed = false }) => {
   );
 };
 
-export default Nav;
+export default withTranslation('nav')(Nav);

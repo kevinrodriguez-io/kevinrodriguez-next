@@ -2,6 +2,7 @@ import React from 'react';
 import App, { Container } from 'next/app';
 import GlobalStyles from '../components/global.styles';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import { appWithTranslation } from '../i18n';
 
 class KevinRodriguezApp extends App {
   static async getInitialProps({ Component, ctx, router }) {
@@ -23,4 +24,4 @@ class KevinRodriguezApp extends App {
   }
 }
 
-export default KevinRodriguezApp;
+export default appWithTranslation(KevinRodriguezApp);
