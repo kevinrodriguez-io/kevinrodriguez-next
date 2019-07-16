@@ -1,3 +1,11 @@
 {
-  "test": "prueba"
+  "test": "prueba",
+  "contact": "Contactar",
+  "aboutMe": "Acerca de mí",
+  "previousWork": "Trabajo anterior",
+  "jobTitle": "Título del trabajo",
+  "from": "Desde",
+  "to": "Hasta",
+  "responsibilities": "Responsabilidades",
+  "technologies": "Tecnologías"
 }

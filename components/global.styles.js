@@ -15,6 +15,33 @@ export default function GlobalStyles({ children }) {
           margin: 0;
           font-family: 'Montserrat', sans-serif;
         }
+        .auto-grid {
+          flex: 1 1 auto;
+        }
+        .elevated {
+          box-shadow: 0px 4px 5px -4px rgba(0, 0, 0, 1);
+        }
+        .ma-1em {
+          margin: 1em 1em 1em 1em;
+        }
+        .pa-1em {
+          padding: 1em 1em 1em 1em;
+        }
+        .no-break-title {
+          display: inline;
+        }
+        .my-1em {
+          margin-top: 1em;
+          margin-bottom: 1em;
+        }
+        .px-10 {
+          padding-left: 10%;
+          padding-right: 10%;
+        }
+        .mx-10 {
+          margin-left: 10%;
+          margin-right: 10%;
+        }
         .max-width-60 {
           max-width: 60vw;
         }
@@ -78,9 +105,17 @@ export default function GlobalStyles({ children }) {
           background-color: ${colors.darker};
           color: ${colors.lighter};
         }
+        .bg-less-dark {
+          background-color: ${colors.dark};
+          color: ${colors.lighter};
+        }
         .bg-light {
           background-color: ${colors.lighter};
           color: ${colors.dark};
+        }
+        .bg-less-light {
+          background-color: ${colors.light};
+          color: ${colors.darker};
         }
         .header {
           text-transform: uppercase;

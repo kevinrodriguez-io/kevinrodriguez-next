@@ -50,7 +50,7 @@ const Home = ({ landing }) => {
   );
 };
 
-Home.getInitialProps = async ({ pathname, query, asPath, req, res, err }) => {
+Home.getInitialProps = async ({ req }) => {
   const currentLanguage = getCurrentLanguage(req, i18n);
   const locale = getLocaleFromCurrentLanguage(currentLanguage);
   const searchTitle = 'Kevin Rodríguez';

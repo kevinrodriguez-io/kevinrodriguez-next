@@ -5,6 +5,16 @@ const colors = {
   lighter: '#EBF0F1',
   flatRed: '#E74C3C',
   flatRedDark: '#C0392B',
+  flatSkyBlue: '#3398DB',
+  flatSkyBlueDark: '#2980B9',
+  flatPurple: '#745EC5',
+  flatPurpleDark: '#5B48A2',
+  flatGreen: '#2ECC71',
+  flatGreenDark: '#27AD60',
+  flatMint: '#19BC9C',
+  flatMintDark: '#169F85',
+  flatBlue: '#4F65A0',
+  flatBlueDark: '#394C80',
 };
 
 const getBackgroundColorForMode = mode => {

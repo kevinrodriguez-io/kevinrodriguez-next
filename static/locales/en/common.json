@@ -1,3 +1,11 @@
 {
-  "test": "test"
+  "test": "test",
+  "contact": "Contact",
+  "aboutMe": "About Me",
+  "previousWork": "Previous work",
+  "jobTitle": "Job title",
+  "from": "From",
+  "to": "To",
+  "responsibilities": "Responsibilities",
+  "technologies": "Technologies"
 }
