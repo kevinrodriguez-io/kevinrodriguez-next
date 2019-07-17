@@ -14,6 +14,7 @@ export default function GlobalStyles({ children }) {
         body {
           margin: 0;
           font-family: 'Montserrat', sans-serif;
+          background-color: black;
         }
         .auto-grid {
           flex: 1 1 auto;

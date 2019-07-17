@@ -1,5 +1,7 @@
 import React from 'react';
 import App, { Container } from 'next/app';
+import { PageTransition } from 'next-page-transitions';
+
 import GlobalStyles from '../components/global.styles';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { appWithTranslation } from '../i18n';
@@ -13,12 +15,30 @@ class KevinRodriguezApp extends App {
     return { pageProps };
   }
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps, router } = this.props;
     return (
       <Container>
         <GlobalStyles>
-          <Component {...pageProps} />
+          <PageTransition timeout={300} classNames="page-transition">
+            <Component {...pageProps} key={router.route} />
+          </PageTransition>
         </GlobalStyles>
+        <style jsx global>{`
+          .page-transition-enter {
+            opacity: 0;
+          }
+          .page-transition-enter-active {
+            opacity: 1;
+            transition: opacity 300ms;
+          }
+          .page-transition-exit {
+            opacity: 1;
+          }
+          .page-transition-exit-active {
+            opacity: 0;
+            transition: opacity 300ms;
+          }
+        `}</style>
       </Container>
     );
   }
