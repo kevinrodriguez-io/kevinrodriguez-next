@@ -237,6 +237,11 @@ const Resume = ({ resume, t }) => {
       <section className="bg-dark row px-10">
         <StudiesListing studies={studies} t={t} />
       </section>
+      <SectionTitleParallax
+        image={resume.fields.otherStudiesImage.fields}
+        title={t('otherStudies')}
+        height="250px"
+      />
       <Footer fixed mode="dark" />
       <pre
         className="bg-light"
