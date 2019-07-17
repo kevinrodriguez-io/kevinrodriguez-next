@@ -21,6 +21,9 @@ export default function GlobalStyles({ children }) {
         .elevated {
           box-shadow: 0px 4px 5px -4px rgba(0, 0, 0, 1);
         }
+        .mr-1em {
+          margin-right: 1em;
+        }
         .ma-1em {
           margin: 1em 1em 1em 1em;
         }
@@ -67,6 +70,9 @@ export default function GlobalStyles({ children }) {
         }
         .flex-space-between {
           display: flex;
+          justify-content: space-between;
+        }
+        .space-between {
           justify-content: space-between;
         }
         .center-flex-absolute {

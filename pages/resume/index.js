@@ -1,5 +1,7 @@
 import React from 'react';
 import Parallax from 'react-css-parallax';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import Head from '../../components/Head';
@@ -81,10 +83,26 @@ const PreviousWorkListing = ({
 };
 
 const TechnologyGroup = ({ group, technologies }) => {
+  const getStars = stars => {
+    const starElements = [];
+    for (let i = 0; i < stars; i++) {
+      starElements.push(
+        <FontAwesomeIcon key={i} icon={faStar} color="orange" />
+      );
+    }
+    return starElements;
+  };
   return (
     <div className="ma-1em pa-1em elevated bg-less-dark auto-grid">
       <h3>{group}</h3>
-      {JSON.stringify(technologies, null, 2)}
+      {technologies
+        .sort((a, b) => b.stars - a.stars)
+        .map(technology => (
+          <div key={technology.name} className="row space-between">
+            <div>{technology.name}</div>
+            <div>{getStars(technology.stars)}</div>
+          </div>
+        ))}
     </div>
   );
 };

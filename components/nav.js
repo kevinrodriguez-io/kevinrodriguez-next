@@ -4,7 +4,6 @@ import { Link, Router, i18n, withTranslation } from '../i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faMedium } from '@fortawesome/free-brands-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import {
   getBackgroundColorForMode,
