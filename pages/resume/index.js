@@ -121,6 +121,26 @@ const TechnologiesListing = ({ availableTechnologies }) => {
   ));
 };
 
+const StudyCard = ({ study, t }) => {
+  const { degree, institutionImage, institutionName, from } = study.fields;
+  const { file, description } = institutionImage.fields;
+  return (
+    <div className="ma-1em pa-1em elevated bg-less-dark auto-grid">
+      <Parallax src={file.url} alt={description} height="250px" fixed />
+      <h3>{institutionName}</h3>
+      <p>{degree}</p>
+      <h4 className="no-break-title mr-1em">{t('from')}</h4>
+      {from && <span>{from}</span>}
+    </div>
+  );
+};
+
+const StudiesListing = ({ studies, t }) => {
+  return studies.map(study => (
+    <StudyCard key={study.fields.degree} study={study} t={t} />
+  ));
+};
+
 const TopParallax = ({
   featuredImage,
   profilePicture,
@@ -165,7 +185,12 @@ const SectionTitleParallax = ({ image, title, height }) => {
 };
 
 const Resume = ({ resume, t }) => {
-  const { aboutMe, previousWork, availableTechnologies } = resume.fields;
+  const {
+    aboutMe,
+    previousWork,
+    availableTechnologies,
+    studies,
+  } = resume.fields;
   return (
     <>
       <Head title="Kevin Rodríguez" />
@@ -209,6 +234,9 @@ const Resume = ({ resume, t }) => {
         title={t('studies')}
         height="250px"
       />
+      <section className="bg-dark row px-10">
+        <StudiesListing studies={studies} t={t} />
+      </section>
       <Footer fixed mode="dark" />
       <pre
         className="bg-light"
