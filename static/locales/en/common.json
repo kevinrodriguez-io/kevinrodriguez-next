@@ -8,5 +8,9 @@
   "to": "To",
   "responsibilities": "Responsibilities",
   "technologies": "Technologies",
-  "otherStudies": "Other studies"
+  "otherStudies": "Other studies",
+  "startDate": "Start date",
+  "institution": "Institution",
+  "instructor": "Instructor",
+  "viewCertificate": "View Certificate"
 }

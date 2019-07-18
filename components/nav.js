@@ -33,9 +33,18 @@ const Nav = ({ mode = 'transparent', fixed = false, t }) => {
     const { pathname, query } = Router;
     Router.push({ pathname, query }, Router.asPath);
   };
+  const navClasses = [];
+  switch (mode) {
+    case 'dark':
+    case 'light':
+      navClasses.push('elevated');
+      break;
+    default:
+      break;
+  }
   return (
     <>
-      <nav>
+      <nav className={navClasses.join(' ')}>
         <div className="links left">
           <div>
             <Link href="/">

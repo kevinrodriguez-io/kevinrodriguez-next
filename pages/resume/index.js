@@ -121,7 +121,7 @@ const TechnologiesListing = ({ availableTechnologies }) => {
   ));
 };
 
-const StudyCard = ({ study, t }) => {
+const StudyCard = ({ study, startDateTitle }) => {
   const { degree, institutionImage, institutionName, from } = study.fields;
   const { file, description } = institutionImage.fields;
   return (
@@ -129,15 +129,63 @@ const StudyCard = ({ study, t }) => {
       <Parallax src={file.url} alt={description} height="250px" fixed />
       <h3>{institutionName}</h3>
       <p>{degree}</p>
-      <h4 className="no-break-title mr-1em">{t('from')}</h4>
+      <h4 className="no-break-title mr-1em">{startDateTitle}</h4>
       {from && <span>{from}</span>}
     </div>
   );
 };
 
-const StudiesListing = ({ studies, t }) => {
+const StudiesListing = ({ studies, startDateTitle }) => {
   return studies.map(study => (
-    <StudyCard key={study.fields.degree} study={study} t={t} />
+    <StudyCard
+      key={study.fields.degree}
+      study={study}
+      startDateTitle={startDateTitle}
+    />
+  ));
+};
+
+const OtherStudyCard = ({
+  study,
+  institutionTitle,
+  instructorTitle,
+  viewCertificateTitle,
+}) => {
+  const { title, certificateUrl, institutionName, instructor } = study.fields;
+  return (
+    <div className="ma-1em pa-1em elevated bg-less-dark auto-grid">
+      <h3 className="text-center">{title}</h3>
+      <div className="row space-between">
+        <div className="mr-1em">
+          <h4 className="no-break-title">{institutionTitle}: </h4>
+          {institutionName}
+        </div>
+        <div>
+          <h4 className="no-break-title">{instructorTitle}: </h4>
+          {instructor}
+        </div>
+      </div>
+      <div className="my-1em text-center">
+        <a className="green" href={certificateUrl}>
+          {viewCertificateTitle}
+        </a>
+      </div>
+    </div>
+  );
+};
+
+const OtherStudiesListing = ({
+  otherStudies,
+  institutionTitle,
+  instructorTitle,
+  viewCertificateTitle,
+}) => {
+  return otherStudies.map(study => (
+    <OtherStudyCard
+      key={study.fields.title}
+      study={study}
+      {...{ institutionTitle, instructorTitle, viewCertificateTitle }}
+    />
   ));
 };
 
@@ -190,6 +238,7 @@ const Resume = ({ resume, t }) => {
     previousWork,
     availableTechnologies,
     studies,
+    otherStudies,
   } = resume.fields;
   return (
     <>
@@ -235,19 +284,22 @@ const Resume = ({ resume, t }) => {
         height="250px"
       />
       <section className="bg-dark row px-10">
-        <StudiesListing studies={studies} t={t} />
+        <StudiesListing studies={studies} startDateTitle={t('startDate')} />
       </section>
       <SectionTitleParallax
         image={resume.fields.otherStudiesImage.fields}
         title={t('otherStudies')}
         height="250px"
       />
+      <section className="bg-dark row px-10 margin-bottom-footer">
+        <OtherStudiesListing
+          otherStudies={otherStudies}
+          institutionTitle={t('institution')}
+          instructorTitle={t('instructor')}
+          viewCertificateTitle={t('viewCertificate')}
+        />
+      </section>
       <Footer fixed mode="dark" />
-      <pre
-        className="bg-light"
-        style={{ margin: '0', padding: '1em 1em 1em 1em', overflow: 'scroll' }}>
-        {JSON.stringify(resume.fields, null, 2)}
-      </pre>
       <style jsx global>{`
         img.profile-picture {
           width: 125px;

@@ -16,6 +16,21 @@ export default function GlobalStyles({ children }) {
           font-family: 'Montserrat', sans-serif;
           background-color: black;
         }
+        .margin-bottom-footer {
+          margin-bottom: calc(0.8em + 0.5em + 0.8em);
+        }
+        .blue {
+          color: ${colors.flatBlue}!important;
+        }
+        .darkBlue {
+          color: ${colors.flatBlueDark}!important;
+        }
+        .green {
+          color: ${colors.flatGreen}!important;
+        }
+        .darkGreen {
+          color: ${colors.flatGreenDark}!important;
+        }
         .auto-grid {
           flex: 1 1 auto;
         }
@@ -41,6 +56,10 @@ export default function GlobalStyles({ children }) {
         .px-10 {
           padding-left: 10%;
           padding-right: 10%;
+        }
+        .mx-1em {
+          margin-left: 1em;
+          margin-right: 1em;
         }
         .mx-10 {
           margin-left: 10%;
