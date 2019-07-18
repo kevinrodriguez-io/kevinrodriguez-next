@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "node index.js",
     "build": "next build",
-    "start": "NODE_ENV=production node index.js"
+    "start": "NODE_ENV=production node index.js",
+    "export": "next export"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.2.0",
