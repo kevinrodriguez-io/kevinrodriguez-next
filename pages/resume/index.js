@@ -87,7 +87,7 @@ const TechnologyGroup = ({ group, technologies }) => {
     const starElements = [];
     for (let i = 0; i < stars; i++) {
       starElements.push(
-        <FontAwesomeIcon key={i} icon={faStar} color="orange" />
+        <FontAwesomeIcon key={i} icon={faStar} color={colors.primary} />
       );
     }
     return starElements;
@@ -154,7 +154,7 @@ const OtherStudyCard = ({
   const { title, certificateUrl, institutionName, instructor } = study.fields;
   return (
     <div className="ma-1em pa-1em elevated bg-less-dark auto-grid">
-      <h3 className="text-center">{title}</h3>
+      <h3 className="text-center max-250 center-block">{title}</h3>
       <div className="row space-between">
         <div className="mr-1em">
           <h4 className="no-break-title">{institutionTitle}: </h4>
@@ -166,7 +166,7 @@ const OtherStudyCard = ({
         </div>
       </div>
       <div className="my-1em text-center">
-        <a className="green" href={certificateUrl}>
+        <a className="primary" href={certificateUrl}>
           {viewCertificateTitle}
         </a>
       </div>
@@ -311,11 +311,14 @@ const Resume = ({ resume, t }) => {
           padding: 0.8em 0.8em 0.8em 0.8em;
         }
         a.contact-cta {
-          background-color: ${colors.flatSkyBlue};
+          background-color: ${colors.primary};
           padding: 0.8em 0.8em 0.8em 0.8em;
-          color: ${colors.lighter};
+          color: ${colors.dark};
           text-decoration: unset;
           border-radius: 5%;
+        }
+        .max-250 {
+          max-width: 250px;
         }
       `}</style>
     </>

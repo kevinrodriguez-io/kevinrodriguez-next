@@ -26,7 +26,6 @@ const Footer = ({ mode = 'transparent', fixed = false, t }) => {
           color: ${getTextColorForMode(mode)};
           text-align: center;
           position: ${fixed ? 'fixed' : 'absolute'};
-          z-index: 1;
           bottom: 0;
           width: 100%;
           padding-top: 0.8em;

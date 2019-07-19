@@ -5,6 +5,9 @@ import { colors } from '../../ui/Theme/colors';
 const AppColorStyles = () => {
   return (
     <style global jsx>{`
+      .primary {
+        color: ${colors.primary}!important;
+      }
       .blue {
         color: ${colors.flatBlue}!important;
       }

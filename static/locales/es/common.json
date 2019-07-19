@@ -13,5 +13,6 @@
   "startDate": "Fecha de inicio",
   "institution": "Institución",
   "instructor": "Instructor",
-  "viewCertificate": "Ver certificado"
+  "viewCertificate": "Ver certificado",
+  "workInProgress": "Bajo construcción"
 }
