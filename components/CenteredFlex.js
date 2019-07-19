@@ -9,11 +9,11 @@ const CenteredFlex = ({
   const sectionClasses = ['text-section'];
   if (centerContent) sectionClasses.push('center-block');
   if (w60) sectionClasses.push('max-width-60');
-  const mainDivClasses = ['col justify a100'];
+  const mainDivClasses = ['col justify-space-evenly a100'];
   if (absolute) mainDivClasses.push('center-flex-absolute');
   return (
     <div className={mainDivClasses.join(' ')}>
-      <div className="row justify center-flex">
+      <div className="row justify-space-evenly center-flex">
         <section className={sectionClasses.join(' ')}>{children}</section>
       </div>
     </div>

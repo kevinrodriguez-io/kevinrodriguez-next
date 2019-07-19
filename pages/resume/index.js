@@ -239,10 +239,11 @@ const Resume = ({ resume, t }) => {
     availableTechnologies,
     studies,
     otherStudies,
+    title,
   } = resume.fields;
   return (
     <>
-      <Head title="Kevin Rodríguez"  />
+      <Head title={`Kevin Rodríguez - ${title}`} />
       <Nav fixed mode="dark" />
       <TopParallax
         featuredImage={resume.fields.featuredImage.fields}
