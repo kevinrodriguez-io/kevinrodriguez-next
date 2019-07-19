@@ -1,6 +1,6 @@
 {
   "name": "create-next-example-app",
-  "license": "Privative",
+  "license": "0BSD",
   "scripts": {
     "dev": "node index.js",
     "build": "next build",

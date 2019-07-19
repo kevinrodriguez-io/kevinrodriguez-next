@@ -7,15 +7,6 @@ export default function GlobalStyles({ children }) {
     <>
       {children}
       <style global jsx>{`
-        @import url('https://fonts.googleapis.com/css?family=Montserrat:100,400,700,800,900&display=swap');
-        html {
-          scroll-behavior: smooth;
-        }
-        body {
-          margin: 0;
-          font-family: 'Montserrat', sans-serif;
-          background-color: black;
-        }
         .margin-bottom-footer {
           margin-bottom: calc(0.8em + 0.5em + 0.8em);
         }

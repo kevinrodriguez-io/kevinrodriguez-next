@@ -21,7 +21,7 @@ const Home = ({ landing }) => {
   const { displayName, briefing, qualities } = landing.fields;
   return (
     <>
-      <Head title="Kevin Rodríguez" />
+      <Head title={displayName} description={briefing} />
       <Nav />
       <Parallax
         src={featuredImage.file.url}
@@ -61,7 +61,7 @@ Home.getInitialProps = async ({ req }) => {
   });
   return {
     landing: landing.items[0],
-    namespacesRequired: ['common'],
+    namespacesRequired: ['common', 'nav', 'footer'],
   };
 };
 

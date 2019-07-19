@@ -242,7 +242,7 @@ const Resume = ({ resume, t }) => {
   } = resume.fields;
   return (
     <>
-      <Head title="Kevin Rodríguez" />
+      <Head title="Kevin Rodríguez"  />
       <Nav fixed mode="dark" />
       <TopParallax
         featuredImage={resume.fields.featuredImage.fields}
@@ -332,7 +332,7 @@ Resume.getInitialProps = async ({ req }) => {
   });
   return {
     resume: resume.items[0],
-    namespacesRequired: ['common'],
+    namespacesRequired: ['common', 'nav', 'footer'],
   };
 };
 

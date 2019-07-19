@@ -6,6 +6,8 @@ import GlobalStyles from '../components/global.styles';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { appWithTranslation } from '../i18n';
 
+import './styles.css';
+
 class KevinRodriguezApp extends App {
   static async getInitialProps({ Component, ctx, router }) {
     let pageProps = {};
