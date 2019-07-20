@@ -16,7 +16,7 @@ const colors = {
   flatBlue: '#4F65A0',
   flatBlueDark: '#394C80',
 };
-colors.primary = colors.flatGreen;
+colors.primary = colors.flatRed;
 
 const getBackgroundColorForMode = mode => {
   switch (mode) {
