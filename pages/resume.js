@@ -4,21 +4,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-import Head from '../components/Head.js';
-import Nav from '../components/Nav.js';
-import Footer from '../components/Footer.js';
-import CenteredFlex from '../components/CenteredFlex.js';
+import Head from '../components/Head';
+import Nav from '../components/Nav';
+import Footer from '../components/Footer';
+import CenteredFlex from '../components/CenteredFlex';
 
-import kevinrodriguezApi from '../api/kevinrodriguezApi.js';
+import kevinrodriguezApi from '../api/kevinrodriguezApi';
 
-import { colors } from '../ui/Theme/colors.js';
+import { colors } from '../ui/Theme/colors';
 
-import { withTranslation, i18n } from '../i18n.js';
+import { withTranslation, i18n } from '../i18n';
 import {
   getLocaleFromCurrentLanguage,
   getCurrentLanguage,
-} from '../lib/locale.js';
-import groupBy from '../lib/groupBy.js';
+} from '../lib/locale';
+import groupBy from '../lib/groupBy';
 
 const PreviousWorkElement = ({
   previousWorkElement,

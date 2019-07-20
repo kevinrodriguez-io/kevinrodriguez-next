@@ -3,18 +3,18 @@ import React from 'react';
 import Parallax from 'react-css-parallax';
 import Typed from 'react-typed';
 
-import Head from '../components/Head.js';
-import CenteredText from '../components/CenteredFlex.js';
-import Nav from '../components/Nav.js';
-import Footer from '../components/Footer.js';
+import Head from '../components/Head';
+import CenteredText from '../components/CenteredFlex';
+import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
-import kevinrodriguezApi from '../api/kevinrodriguezApi.js';
+import kevinrodriguezApi from '../api/kevinrodriguezApi';
 
-import { withTranslation, i18n } from '../i18n.js';
+import { withTranslation, i18n } from '../i18n';
 import {
   getLocaleFromCurrentLanguage,
   getCurrentLanguage,
-} from '../lib/locale.js';
+} from '../lib/locale';
 
 const Home = ({ landing }) => {
   const featuredImage = landing.fields.featuredImage.fields;
