@@ -2,11 +2,11 @@ import React from 'react';
 import App, { Container } from 'next/app';
 import { PageTransition } from 'next-page-transitions';
 
-import ColorStyles from '../components/styles/ColorStyles';
-import TransitionStyles from '../components/styles/TransitionStyles';
+import ColorStyles from '../components/styles/ColorStyles.js';
+import TransitionStyles from '../components/styles/TransitionStyles.js';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import { appWithTranslation } from '../i18n';
+import { appWithTranslation } from '../i18n.js';
 
 import './styles.css';
 

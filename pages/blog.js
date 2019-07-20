@@ -3,11 +3,11 @@ import Parallax from 'react-css-parallax';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHammer } from '@fortawesome/free-solid-svg-icons';
 
-import Nav from '../components/Nav';
-import Footer from '../components/Footer';
-import CenteredFlex from '../components/CenteredFlex';
+import Nav from '../components/Nav.js';
+import Footer from '../components/Footer.js';
+import CenteredFlex from '../components/CenteredFlex.js';
 
-import { withTranslation } from '../i18n';
+import { withTranslation } from '../i18n.js';
 
 const Blog = ({ t }) => {
   return (
