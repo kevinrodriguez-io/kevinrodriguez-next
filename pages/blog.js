@@ -3,13 +3,13 @@ import Parallax from 'react-css-parallax';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHammer } from '@fortawesome/free-solid-svg-icons';
 
-import Nav from '../../components/Nav';
-import Footer from '../../components/Footer';
-import CenteredFlex from '../../components/CenteredFlex';
+import Nav from '../components/Nav';
+import Footer from '../components/Footer';
+import CenteredFlex from '../components/CenteredFlex';
 
-import { withTranslation } from '../../i18n';
+import { withTranslation } from '../i18n';
 
-const Blog = ({t}) => {
+const Blog = ({ t }) => {
   return (
     <>
       <Nav mode="transparent" />
