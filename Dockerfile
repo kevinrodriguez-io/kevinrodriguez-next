@@ -10,7 +10,7 @@ COPY package.json /usr/src/app/
 
 RUN yarn
 
-COPY . /
+COPY . /usr/src/app/
 
 RUN yarn build
 
