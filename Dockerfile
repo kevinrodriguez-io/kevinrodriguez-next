@@ -7,6 +7,9 @@ ENV PORT 3000
 ENV HOST 0.0.0.0
 
 COPY package.json /usr/src/app/
+COPY yarn.lock /usr/src/app/
+
+RUN ls /usr/src/app/
 
 RUN yarn
 
