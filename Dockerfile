@@ -11,6 +11,8 @@ RUN yarn
 
 COPY . .
 
+CMD ls -ll /usr/src/app
+
 RUN yarn build
 
 CMD yarn start
