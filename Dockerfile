@@ -15,6 +15,10 @@ RUN yarn
 
 COPY . /usr/src/app/
 
+RUN ls /usr/src/app/
+RUN ls /usr/src/pages/
+RUN ls /usr/src/components/
+
 RUN yarn build
 
 CMD yarn start
