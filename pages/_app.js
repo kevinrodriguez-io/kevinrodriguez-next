@@ -1,6 +1,9 @@
 import React from 'react';
+import Router from 'next/router';
 import App, { Container } from 'next/app';
 import { PageTransition } from 'next-page-transitions';
+
+import * as gtag from '../lib/gtag';
 
 import ColorStyles from '../components/styles/ColorStyles';
 import TransitionStyles from '../components/styles/TransitionStyles';
@@ -34,5 +37,7 @@ class KevinRodriguezApp extends App {
     );
   }
 }
+
+Router.events.on('routeChangeComplete', url => gtag.pageView(url));
 
 export default appWithTranslation(KevinRodriguezApp);
