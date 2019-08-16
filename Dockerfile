@@ -16,8 +16,8 @@ RUN yarn
 COPY . /usr/src/app/
 
 RUN ls /usr/src/app/
-RUN ls /usr/src/pages/
-RUN ls /usr/src/components/
+RUN ls /usr/src/app/pages/
+RUN ls /usr/src/app/components/
 
 RUN yarn build
 
