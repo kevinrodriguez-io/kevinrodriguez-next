@@ -1,6 +1,8 @@
-My personal website, made with 💖.
+# My personal website, made with 💖.
 
-Nice features:
+Readme, dedicatory, or other stuff should go here.
+
+## Nice features:
 
 - ✅ Next.JS
 - ✅ i18nNext (Internationalization)
